@@ -2,8 +2,8 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const passport = require('passport')
-const session = require('express-session') //requires sessions 
-const MongoStore = require('connect-mongo')(session) //handles sessions and cookies
+const session = require('express-session')
+const MongoStore = require('connect-mongo')(session)
 const flash = require('express-flash')
 const logger = require('morgan')
 const connectDB = require('./config/database')
@@ -42,5 +42,5 @@ app.use('/', mainRoutes)
 app.use('/todos', todoRoutes)
  
 app.listen(process.env.PORT, ()=>{
-    console.log('Server is running, you better catch it!')
+    console.log('Server is running')
 })    
